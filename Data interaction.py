@@ -61,7 +61,7 @@ length_counts = count_amounts_in_dict(length_dict)
 
 IPR_destination= "/data_output/IPR_dict.json"
 EC_destination= "/data_output/EC_dict.json"
-length_destination = /data_output/length_dict.json"
+length_destination = "/data_output/length_dict.json"
 
 IPR_counts_destination= "/data_output/IPR_counts.json"
 EC_counts_destination= "/data_output/EC_counts.json"
