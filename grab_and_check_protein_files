@@ -2,7 +2,8 @@ import requests
 from rdkit import Chem
 from collections import defaultdict
 import os
-
+#In this script, information is gathered from the RCSB PDB database using their API, the data is then checked for errors and compared to the pdbbind data for any inconsistensies
+#All data and errors are then saved into a new file.
 def get_info_from_json(response):
     try:
         return response
@@ -208,8 +209,8 @@ def count_atoms(sdf_file):
 def get_info(pdb_id):
     uniprot_ids, IPR_ids, Enzyme_class, ligand_ids, formula_dicts, InChIKeys, polymer_ids, length_list, SMILES =get_query(pdb_id)
     information = uniprot_ids, IPR_ids, Enzyme_class, ligand_ids, formula_dicts, InChIKeys, polymer_ids, length_list, SMILES
-    sdf_file = f"C:/Users/Simon/Desktop/Bachelor/PDBBind_processed/{pdb_id}/{pdb_id}_ligand.sdf"
-    PDBBind_info_dict_location = "C:/Users/Simon/Desktop/Bachelor/data_output/PDBBind_info_dict.txt"
+    sdf_file = f"PDBBind_processed/{pdb_id}/{pdb_id}_ligand.sdf"
+    PDBBind_info_dict_location = "/data_output/PDBBind_info_dict.txt"
 
     with open(PDBBind_info_dict_location, "r") as file:
         index = 0
@@ -263,7 +264,7 @@ def get_info(pdb_id):
     output = [pdb_id, [uniprot_ids, IPR_ids, Enzyme_class, polymer_ids, length_list], [InChIKeys_selected, formula_dicts_selected, ligand_id_selected, SMILES_selected]]
     return output
 
-pdb_id_list_location = "C:/Users/Simon/DiffDock/data/splits/timesplit_no_lig_overlap_train"
+pdb_id_list_location = "timesplit_no_lig_overlap_train"
 pdb_id_file = open(pdb_id_list_location, "r")
 pdb_id_list = pdb_id_file.read().split("\n")
 pdb_id_file.close()
@@ -272,7 +273,7 @@ pdb_id_file.close()
 
 
 
-output_destination= "C:/Users/Simon/Desktop/Bachelor/data_output/output_training_data.txt"
+output_destination= "data_output/output_training_data.txt"
 
 output_file = open(output_destination, "a")
 
