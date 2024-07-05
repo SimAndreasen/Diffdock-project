@@ -25,7 +25,7 @@ def save_file(destination, input):
     with open(destination, "w") as file:
         json.dump(input, file)
 
-input_destination= "C:/Users/Simon/Desktop/Bachelor/data_output/output_training_data.txt"
+input_destination= "/data_output/output_training_data.txt"
 with open(input_destination, "r") as file:
     complex_list = file.read().split("\n")
 
