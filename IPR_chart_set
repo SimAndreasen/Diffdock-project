@@ -1,7 +1,7 @@
 import json
 import matplotlib.pyplot as plt
 
-input_destination = "C:/Users/Simon/Desktop/Bachelor/data_output/IPR_counts.json"
+input_destination = "/data_output/IPR_counts.json"
 
 with open(input_destination, "r") as file:
     data = json.load(file)
@@ -11,7 +11,7 @@ sorted_data = dict(sorted(data.items(), key=lambda item: item[1]))
 sorted_keys =  list(sorted_data.keys())
 sorted_values = list(sorted_data.values())
 
-name_dict_dest = "C:/Users/Simon/Desktop/Bachelor/data_output/info_on_ipr/name_dict.json"
+name_dict_dest = "/data_output/info_on_ipr/name_dict.json"
 
 
 
@@ -31,7 +31,7 @@ sum_values=sum(sorted_values)
 
 sorted_percentages = [value/sum_values for value in sorted_values]
 
-ref_counts_dest = "C:/Users/Simon/Desktop/Bachelor/data_output/info_on_ipr/count_dict.json"
+ref_counts_dest = "/data_output/info_on_ipr/count_dict.json"
 
 with open(ref_counts_dest, "r") as file:
     ref_data = json.load(file)
