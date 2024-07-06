@@ -8,7 +8,7 @@ def remove_after_instance(s,number):
     return ".".join(parts[:number])
 
 
-ec_counts_path = "C:/Users/Simon/Desktop/Bachelor/data_output/EC_counts.json"
+ec_counts_path = "/data_output/EC_counts.json"
 
 
 with open(ec_counts_path, "r") as file:
