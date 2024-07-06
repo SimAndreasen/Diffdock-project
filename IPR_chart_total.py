@@ -1,7 +1,7 @@
 import json
 import matplotlib.pyplot as plt
 
-input_destination = "C:/Users/Simon/Desktop/Bachelor/data_output/info_on_ipr/count_dict.json"
+input_destination = "/data_output/info_on_ipr/count_dict.json"
 
 with open(input_destination, "r") as file:
     data = json.load(file)
@@ -13,7 +13,7 @@ sorted_values = list(sorted_data.values())
 
 
 
-name_dict_dest = "C:/Users/Simon/Desktop/Bachelor/data_output/info_on_ipr/name_dict.json"
+name_dict_dest = "/data_output/info_on_ipr/name_dict.json"
 
 with open(name_dict_dest, "r") as file:
     keys_to_names = json.load(file)
